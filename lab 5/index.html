@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Task Manager</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <main class="app">
+
+    <!-- Header -->
+    <header class="header">
+      <div>
+        <div class="brand">
+          <span class="brand-icon">✓</span>
+        Tasks
+        </div>
+      </div>
+
+      <div class="task-count">
+        <strong id="remainingCount">0</strong>
+        <span>remaining</span>
+      </div>
+    </header>
+
+    <!-- Add Task -->
+    <section class="add-task">
+
+      <input
+        type="text"
+        id="taskInput"
+        placeholder="What do you need to do?"
+        autocomplete="off"
+      >
+
+      <button id="addButton">
+        <span>+</span>
+        Add Task
+      </button>
+
+    </section>
+
+    <!-- Filters -->
+    <nav class="filters">
+
+      <button class="filter active" data-filter="all">
+        All
+      </button>
+
+      <button class="filter" data-filter="active">
+        Active
+      </button>
+
+      <button class="filter" data-filter="completed">
+        Completed
+      </button>
+
+    </nav>
+
+    <!-- Task List -->
+    <section>
+
+      <ul id="taskList"></ul>
+
+      <!-- Empty state -->
+      <div id="emptyState" class="empty-state">
+
+        <div class="empty-icon">
+          ✓
+        </div>
+
+        <h2 id="emptyTitle">
+          No tasks yet
+        </h2>
+
+        <p id="emptyText">
+          Add your first task above to get started.
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+
+      <span id="taskSummary">
+        0 tasks
+      </span>
+
+      <button id="clearCompleted">
+        Clear completed
+      </button>
+
+    </footer>
+
+  </main>
+
+  <script defer src="main.dart.js"></script>
+
+</body>
+
+</html>
