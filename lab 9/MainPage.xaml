@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MauiApp1.MainPage"
+    Title="Widget Demo App"
+    BackgroundColor="#F2F4F8">
+
+    <ScrollView>
+
+        <VerticalStackLayout
+            Padding="20"
+            Spacing="18">
+
+            <!-- Application Heading -->
+
+            <Label
+                Text="STUDENT PROFILE"
+                FontSize="24"
+                FontAttributes="Bold"
+                TextColor="#263B5E"
+                HorizontalOptions="Center"/>
+
+            <!-- Profile Image -->
+
+            <Image
+                Source="student.png"
+                WidthRequest="130"
+                HeightRequest="130"
+                Aspect="AspectFill"
+                HorizontalOptions="Center"/>
+
+            <!-- Profile Summary Card -->
+
+            <Frame
+                BackgroundColor="White"
+                CornerRadius="15"
+                Padding="20"
+                HasShadow="True">
+
+                <VerticalStackLayout Spacing="8">
+
+                    <Label
+                        Text="Ishaan Shaikh"
+                        FontSize="24"
+                        FontAttributes="Bold"
+                        HorizontalOptions="Center"
+                        TextColor="#263B5E"/>
+
+                    <Label
+                        Text="B.Sc. Computer Science"
+                        FontSize="16"
+                        TextColor="Gray"
+                        HorizontalOptions="Center"/>
+
+                    <Label
+                        Text="Passionate about programming and mobile app development."
+                        FontSize="14"
+                        HorizontalTextAlignment="Center"
+                        TextColor="#555555"/>
+
+                </VerticalStackLayout>
+
+            </Frame>
+
+            <!-- Like and Message Buttons -->
+
+            <HorizontalStackLayout
+                Spacing="12">
+
+                <Button
+                    x:Name="likeButton"
+                    Text="Like (0)"
+                    BackgroundColor="#2878D0"
+                    TextColor="White"
+                    CornerRadius="10"
+                    HorizontalOptions="FillAndExpand"
+                    Clicked="OnLikeClicked"/>
+
+                <Button
+                    Text="Message"
+                    BackgroundColor="#28A078"
+                    TextColor="White"
+                    CornerRadius="10"
+                    HorizontalOptions="FillAndExpand"
+                    Clicked="OnMessageClicked"/>
+
+            </HorizontalStackLayout>
+
+            <!-- Comment Section -->
+
+            <Label
+                Text="Add a Comment"
+                FontSize="18"
+                FontAttributes="Bold"
+                TextColor="#263B5E"/>
+
+            <Entry
+                x:Name="commentEntry"
+                Placeholder="Add a comment..."
+                BackgroundColor="White"
+                TextColor="Black"/>
+
+            <Button
+                Text="Post Comment"
+                BackgroundColor="#263B5E"
+                TextColor="White"
+                CornerRadius="10"
+                Clicked="OnPostCommentClicked"/>
+
+            <Label
+                x:Name="commentResult"
+                FontSize="14"
+                TextColor="Green"/>
+
+            <!-- Skills Section -->
+
+            <Label
+                Text="My Skills"
+                FontSize="20"
+                FontAttributes="Bold"
+                TextColor="#263B5E"/>
+
+            <!-- Horizontal CollectionView -->
+
+            <CollectionView
+                ItemsSource="{Binding Skills}"
+                ItemsLayout="HorizontalList"
+                HeightRequest="65">
+
+                <CollectionView.ItemTemplate>
+
+                    <DataTemplate>
+
+                        <Border
+                            BackgroundColor="#DCEBFA"
+                            StrokeThickness="0"
+                            Padding="15"
+                            Margin="5">
+
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="12"/>
+                            </Border.StrokeShape>
+
+                            <Label
+                                Text="{Binding .}"
+                                FontSize="15"
+                                FontAttributes="Bold"
+                                TextColor="#263B5E"
+                                VerticalOptions="Center"/>
+
+                        </Border>
+
+                    </DataTemplate>
+
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>
