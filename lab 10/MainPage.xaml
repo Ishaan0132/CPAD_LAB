@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MauiApp1.MainPage"
+    Title="Dashboard"
+    BackgroundColor="#F2F4F8">
+
+    <!-- Outer ScrollView -->
+
+    <ScrollView>
+
+        <VerticalStackLayout
+            Padding="20"
+            Spacing="20">
+
+            <!-- STEP 1: HEADER SECTION -->
+
+            <HorizontalStackLayout
+                Spacing="10"
+                VerticalOptions="Center">
+
+                <Label
+                    Text="My Dashboard"
+                    FontSize="26"
+                    FontAttributes="Bold"
+                    TextColor="#263B5E"
+                    VerticalOptions="Center"
+                    HorizontalOptions="StartAndExpand"/>
+
+                <!-- Notification Icon and Badge -->
+
+                <AbsoluteLayout
+                    WidthRequest="50"
+                    HeightRequest="50">
+
+                    <Image
+                        Source="notification.png"
+                        WidthRequest="35"
+                        HeightRequest="35"
+                        Aspect="AspectFit"
+                        AbsoluteLayout.LayoutBounds="5,10,35,35"
+                        AbsoluteLayout.LayoutFlags="None"/>
+
+                    <BoxView
+                        Color="Red"
+                        CornerRadius="8"
+                        WidthRequest="14"
+                        HeightRequest="14"
+                        AbsoluteLayout.LayoutBounds="35,3,14,14"
+                        AbsoluteLayout.LayoutFlags="None"/>
+
+                </AbsoluteLayout>
+
+            </HorizontalStackLayout>
+
+            <!-- STEP 2: PROFILE SUMMARY CARD -->
+
+            <Frame
+                BackgroundColor="White"
+                CornerRadius="15"
+                Padding="15"
+                HasShadow="True">
+
+                <Grid
+                    ColumnDefinitions="90,*"
+                    ColumnSpacing="15">
+
+                    <!-- Profile Image -->
+
+                    <Image
+                        Source="student.png"
+                        WidthRequest="80"
+                        HeightRequest="80"
+                        Aspect="AspectFill"
+                        Grid.Column="0"
+                        VerticalOptions="Center"/>
+
+                    <!-- Profile Details -->
+
+                    <VerticalStackLayout
+                        Grid.Column="1"
+                        Spacing="8"
+                        VerticalOptions="Center">
+
+                        <Label
+                            Text="Rahul Sharma"
+                            FontSize="21"
+                            FontAttributes="Bold"
+                            TextColor="#263B5E"/>
+
+                        <Label
+                            Text="Software Developer"
+                            FontSize="15"
+                            TextColor="Gray"/>
+
+                        <Label
+                            Text="Welcome back! Have a great day."
+                            FontSize="12"
+                            TextColor="#777777"/>
+
+                    </VerticalStackLayout>
+
+                </Grid>
+
+            </Frame>
+
+            <!-- STEP 3: STATISTICS SECTION -->
+
+            <Label
+                Text="My Statistics"
+                FontSize="20"
+                FontAttributes="Bold"
+                TextColor="#263B5E"/>
+
+
+            <HorizontalStackLayout
+    Spacing="10"
+    HorizontalOptions="Fill">
+
+                <!-- Posts -->
+
+                <VerticalStackLayout
+        HorizontalOptions="FillAndExpand"
+        Spacing="5">
+
+                    <Label
+            Text="120"
+            FontSize="24"
+            FontAttributes="Bold"
+            TextColor="#2878D0"
+            HorizontalTextAlignment="Center"/>
+
+                    <Label
+            Text="Posts"
+            FontSize="14"
+            TextColor="Gray"
+            HorizontalTextAlignment="Center"/>
+
+                </VerticalStackLayout>
+
+                <!-- Followers -->
+
+                <VerticalStackLayout
+        HorizontalOptions="FillAndExpand"
+        Spacing="5">
+
+                    <Label
+            Text="850"
+            FontSize="24"
+            FontAttributes="Bold"
+            TextColor="#28A078"
+            HorizontalTextAlignment="Center"/>
+
+                    <Label
+            Text="Followers"
+            FontSize="14"
+            TextColor="Gray"
+            HorizontalTextAlignment="Center"/>
+
+                </VerticalStackLayout>
+
+                <!-- Following -->
+
+                <VerticalStackLayout
+        HorizontalOptions="FillAndExpand"
+        Spacing="5">
+
+                    <Label
+            Text="300"
+            FontSize="24"
+            FontAttributes="Bold"
+            TextColor="#E58A24"
+            HorizontalTextAlignment="Center"/>
+
+                    <Label
+            Text="Following"
+            FontSize="14"
+            TextColor="Gray"
+            HorizontalTextAlignment="Center"/>
+
+                </VerticalStackLayout>
+
+            </HorizontalStackLayout>
+
+
+            <!-- STEP 4: TAG LIST USING FLEX LAYOUT -->
+
+            <Label
+                Text="My Interests"
+                FontSize="20"
+                FontAttributes="Bold"
+                TextColor="#263B5E"/>
+
+            <FlexLayout
+                Wrap="Wrap"
+                Direction="Row"
+                JustifyContent="Start"
+                AlignItems="Start">
+
+                <Frame
+                    BackgroundColor="#DCEBFA"
+                    CornerRadius="10"
+                    Padding="12"
+                    Margin="4"
+                    HasShadow="False">
+
+                    <Label
+                        Text="Design"
+                        TextColor="#263B5E"
+                        FontAttributes="Bold"/>
+
+                </Frame>
+
+                <Frame
+                    BackgroundColor="#D9F3E8"
+                    CornerRadius="10"
+                    Padding="12"
+                    Margin="4"
+                    HasShadow="False">
+
+                    <Label
+                        Text="Mobile"
+                        TextColor="#206B50"
+                        FontAttributes="Bold"/>
+
+                </Frame>
+
+                <Frame
+                    BackgroundColor="#FCE8D5"
+                    CornerRadius="10"
+                    Padding="12"
+                    Margin="4"
+                    HasShadow="False">
+
+                    <Label
+                        Text="UI"
+                        TextColor="#A85C18"
+                        FontAttributes="Bold"/>
+
+                </Frame>
+
+                <Frame
+                    BackgroundColor="#EAE0FA"
+                    CornerRadius="10"
+                    Padding="12"
+                    Margin="4"
+                    HasShadow="False">
+
+                    <Label
+                        Text="Development"
+                        TextColor="#63449B"
+                        FontAttributes="Bold"/>
+
+                </Frame>
+
+                <Frame
+                    BackgroundColor="#F9DFE5"
+                    CornerRadius="10"
+                    Padding="12"
+                    Margin="4"
+                    HasShadow="False">
+
+                    <Label
+                        Text="Programming"
+                        TextColor="#A33E58"
+                        FontAttributes="Bold"/>
+
+                </Frame>
+
+                <Frame
+                    BackgroundColor="#DCEBFA"
+                    CornerRadius="10"
+                    Padding="12"
+                    Margin="4"
+                    HasShadow="False">
+
+                    <Label
+                        Text="Technology"
+                        TextColor="#263B5E"
+                        FontAttributes="Bold"/>
+
+                </Frame>
+
+            </FlexLayout>
+
+            <!-- STEP 5: CLOSING ACTION BUTTON -->
+
+            <Button
+                x:Name="profileButton"
+                Text="View Full Profile"
+                FontSize="16"
+                FontAttributes="Bold"
+                BackgroundColor="#263B5E"
+                TextColor="White"
+                CornerRadius="12"
+                HeightRequest="50"
+                HorizontalOptions="Fill"
+                Clicked="OnProfileClicked"/>
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>
